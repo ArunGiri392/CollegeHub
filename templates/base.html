@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} {% endblock%}</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    {% block css_files%} {% endblock %}  
+</head>
+
+
+<body>   
+    <header>
+        <nav class="container">
+            <div class="left">
+               <ul>
+                    <li><a href="{% url "Startingpage"  %}">Home</a></li>
+                    <li><a href="{% url "linkingpage" "Scholarship" %}">Colleges with Scholarship</a></li>
+                    <li><a href="{% url "linkingpage" "Interview experiences" %}">Interview experiences</a></li>
+                    <li><a href="{% url "linkingpage" "Terminologies" %}">Terminologies</a></li>
+                    <li><a href="{% url "linkingpage" "Tips and Tricks" %}">Tips and Tricks</a></li>
+                   
+                 
+            </ul>
+                
+            </div>
+
+            <div class="right">
+                <input class="search" type="text" placeholder="Search by College name">
+                
+           </div>
+
+        </nav>
+    </header>
+
+    {% block content%}
+
+    {% endblock %}
+
+    <div class="help">
+        <h1>Do you want to help us?</h1>
+        <h2>You can help us by providing us infomation about colleges that provides Scholarship to International Students.</h2>
+        <h2>Click <a href="{% url "linkingpage" "submitinformation" %}">Here</a> to Submit the Colleges information.</h2>
+    </div>
+
+    <footer>
+        <ul>
+            <li><a href="https://blogwebsitearun.herokuapp.com/">About Me</a></li>
+            <li><a href="https://www.facebook.com/arun.giri.73932/">Connect Me at Social media</a></li>
+            <li><a href="https://www.linkedin.com/in/arungiri12/">Linked In</a></li>
+            <li><a href="">My Blog</a></li>
+            <li><a href="https://www.internationalstudent.com/scholarships/">More Scholarship Information</a></li>
+            <li><a href="https://www.collegeboard.org/">More resources</a></li>
+           
+
+        </ul>
+
+    </footer>
+
+    
+    
+</body>
+</html>

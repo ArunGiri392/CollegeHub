@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static%}
+
+{% block title%}
+Colleges Page
+{% endblock %}
+
+{% block css_files%}
+<link rel="stylesheet" href="{% static 'colleges/scholarship.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="colleges">
+<ul>
+{% for college in colleges%}
+
+<li><a href="{% url "Collegedetail" college.id %}">{{college.Name}}</a></li><br>
+
+{% endfor %}
+</ul>
+</div>
+{% endblock %} 

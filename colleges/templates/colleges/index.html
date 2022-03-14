@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static%}
+
+{% block title%}
+Home Page
+{% endblock %}
+
+{% block css_files%}
+<link rel="stylesheet" href="{% static 'colleges/inde.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="main">
+    <div class="logo">
+    <img src="{% static "colleges/images/collegeapplication.jfif" %}" alt="Picture of the College Search Guide">
+    </div>
+
+    <div class="paragraph">
+     <p style="color:black;font-size:70px;">What we do?</p>
+     <p style="color:black;font-size:40px;">We help you to Find Best Scholarships based on your Profile.</p>
+     <a href="{% url "linkingpage" "Scholarship" %}">Get Started With Us!</a>
+ 
+     </div>
+</div> 
+{% endblock %} 
+
+ 
+    

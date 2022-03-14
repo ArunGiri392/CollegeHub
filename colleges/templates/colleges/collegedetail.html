@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static%}
+
+{% block title%}
+Colleges Information
+{% endblock %}
+
+{% block css_files%}
+<link rel="stylesheet" href="{% static 'colleges/collegedetail.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+<div class="colleges">
+<h1>College Name:{{college.Name}}</h1>
+<h1>Scholarship:{{college.ScholarshipName}}</h1>
+<h1>Minimum SAT Required for Scholarsip:{{college.MinimumSAT }}</h1>
+<h1>Minimum GPA Required for Scholarsip:{{college.MinimumGpa}}</h1>
+<h1>Scholarship Information:{{college.Informationlink}}</h1>
+<h1>College Website:{{college.Collegwebsite}}</h1>
+<h1>Deadlines for scholarship:{{college.Deadlines}}</h1>
+<h1>Comman Application:{{college.CommanApp}}</h1>
+<h1>WES(World Education Service):{{college.Wes }}</h1>
+<h1>Additional Information:{{college.Additionalinformation}}</h1>
+</div>
+
+
+{% endblock %}

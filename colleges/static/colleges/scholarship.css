@@ -1,0 +1,9 @@
+.colleges a{
+    color:black;
+    font-size: 20px;
+    text-decoration:none;
+}
+.colleges a:hover{
+    font-size: 20px;
+   
+}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static%}
+
+{% block title%}
+Interview Experiences
+{% endblock %}
+
+
+
+{% block content %}
+<div class="Interview">
+<ul>
+{% for interview in interviews%}
+
+<li><a href="{% url "linkingpage" "interview_detail"   %}">{{interview.Name}}</a></li><br>
+
+{% endfor %}
+</ul>
+</div>
+{% endblock %}
