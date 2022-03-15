@@ -13,16 +13,22 @@ Colleges Information
 
 {% block content %}
 <div class="colleges">
-<h1>College Name:{{college.Name}}</h1>
-<h1>Scholarship:{{college.ScholarshipName}}</h1>
-<h1>Minimum SAT Required for Scholarsip:{{college.MinimumSAT }}</h1>
-<h1>Minimum GPA Required for Scholarsip:{{college.MinimumGpa}}</h1>
-<h1>Scholarship Information:{{college.Informationlink}}</h1>
-<h1>College Website:{{college.Collegwebsite}}</h1>
-<h1>Deadlines for scholarship:{{college.Deadlines}}</h1>
-<h1>Comman Application:{{college.CommanApp}}</h1>
-<h1>WES(World Education Service):{{college.Wes }}</h1>
-<h1>Additional Information:{{college.Additionalinformation}}</h1>
+    
+<p>College Name:{{college.Name}}</p>
+<p>Scholarship:{{college.ScholarshipName}}</p>
+<p>Minimum SAT Required for Scholarship:{{college.MinimumSAT }}</p>
+<p>Minimum GPA Required for Scholarship:{{college.MinimumGpa}}</p>
+<p>Scholarship Information:<a href="{{college.Informationlink}}">{{college.Informationlink}}</a></p>
+<p>College Website:<a href="{{college.Collegwebsite}}">{{college.Collegwebsite}}</a></p>
+<p>Deadlines for scholarship:{{college.Deadlines}}</p>
+<p>Comman Application:{{college.CommanApp}}</p>
+<p>WES(World Education Service):{{college.Wes }}</p><br><br>
+
+{% if college.Additionalinformation %}
+<h3>Additional Information:</h3>
+<p>{{college.Additionalinformation|linebreaks}}</p>
+{% endif %}
+
 </div>
 
 

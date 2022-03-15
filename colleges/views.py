@@ -2,7 +2,23 @@ from django.shortcuts import render
 from .models import Colleges,Interview
 # Create your views here.
 def startingpage(request):
-    return render(request, "colleges/index.html")
+    if request.method == 'POST':
+        value = request.POST['collegename']
+        # college = Colleges.objects.filter(Name__iexact = value)
+        college = Colleges.objects.filter(Name__contains = value)
+        if len(college) == 0 or len(value) <= 3:
+           return render(request, "colleges/collegenotfound.html",{"college":college})
+        else:
+            college = college[0]
+            return render(request, "colleges/collegedetail.html",{"college":college})
+
+        
+        # if college != []:
+        #     return render(request, "colleges/collegedetail.html",{"college":college})
+
+        print(value)
+        print(college)
+    return render(request, "colleges/index.html",{"value":college})
 
 
 def detailcollege(request,value):

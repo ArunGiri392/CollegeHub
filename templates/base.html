@@ -19,7 +19,7 @@
                <ul>
                     <li><a href="{% url "Startingpage"  %}">Home</a></li>
                     <li><a href="{% url "linkingpage" "Scholarship" %}">Colleges with Scholarship</a></li>
-                    <li><a href="{% url "linkingpage" "Interview experiences" %}">Interview experiences</a></li>
+                    <li><a href="{% url "linkingpage" "Interview experiences" %}">College Essays</a></li>
                     <li><a href="{% url "linkingpage" "Terminologies" %}">Terminologies</a></li>
                     <li><a href="{% url "linkingpage" "Tips and Tricks" %}">Tips and Tricks</a></li>
                    
@@ -27,6 +27,14 @@
             </ul>
                 
             </div>
+
+            <form action="/" method="POST">
+                {% csrf_token %}
+                <label for="your_name"></label>
+                <input id="your_name" type="text" name="collegename" placeholder="College name">
+                <button type="submit">Search </button>
+            </form>
+            
 
             <div class="right">
                 <input class="search" type="text" placeholder="Search by College name">
