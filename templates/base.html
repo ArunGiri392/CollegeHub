@@ -19,7 +19,7 @@
                <ul>
                     <li><a href="{% url "Startingpage"  %}">Home</a></li>
                     <li><a href="{% url "linkingpage" "Scholarship" %}">Colleges with Scholarship</a></li>
-                    <li><a href="{% url "linkingpage" "Interview experiences" %}">College Essays</a></li>
+                    <li><a href="{% url "linkingpage" "College Essays" %}">College Essays</a></li>
                     <li><a href="{% url "linkingpage" "Terminologies" %}">Terminologies</a></li>
                     <li><a href="{% url "linkingpage" "Tips and Tricks" %}">Tips and Tricks</a></li>
                    
@@ -28,18 +28,20 @@
                 
             </div>
 
+            <div class="right">
             <form action="/" method="POST">
                 {% csrf_token %}
                 <label for="your_name"></label>
-                <input id="your_name" type="text" name="collegename" placeholder="College name">
+                <input class="search" id="your_name" type="text" name="collegename" placeholder="College name">
                 <button type="submit">Search </button>
             </form>
+            </div>
             
 
-            <div class="right">
+            {% comment %} <div class="right">
                 <input class="search" type="text" placeholder="Search by College name">
                 
-           </div>
+           </div> {% endcomment %}
 
         </nav>
     </header>
@@ -48,11 +50,11 @@
 
     {% endblock %}
 
-    <div class="help">
+    {% comment %} <div class="help">
         <h1>Do you want to help us?</h1>
         <h2>You can help us by providing us infomation about colleges that provides Scholarship to International Students.</h2>
         <h2>Click <a href="{% url "linkingpage" "submitinformation" %}">Here</a> to Submit the Colleges information.</h2>
-    </div>
+    </div> {% endcomment %}
 
     <footer>
         <ul>

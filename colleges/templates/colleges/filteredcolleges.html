@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static%}
+
+{% block title%}
+Colleges Page
+{% endblock %}
+
+{% block css_files%}
+<link rel="stylesheet" href="{% static 'colleges/scholarship.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+{% if Matched_colleges %}
+<h2>Based on your Test Score and GPA,These are the matching colleges/Scholarship for you.Please have a look at them.</h2>
+<div class="colleges">
+<ul>
+{% for college in Matched_colleges%}
+<li><a href="{% url "Collegedetail" college.id %}">{{college.Name}}</a></li><br>
+{% endfor %}
+
+</ul>
+</div>
+
+{% else %}
+<h2>Sorry! We could not find any Scholarship on our Database based on your score.We have your request and will find you a matching scholarship within 5 business days .Thankyou!</h2>
+{% endif %}
+{% endblock %} 

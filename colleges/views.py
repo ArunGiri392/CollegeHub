@@ -1,7 +1,10 @@
+from xml.dom import UserDataHandler
 from django.shortcuts import render
-from .models import Colleges,Interview
+from .models import Colleges,Essays
+from .forms import ScoresForm
 # Create your views here.
 def startingpage(request):
+    form = ScoresForm()
     if request.method == 'POST':
         value = request.POST['collegename']
         # college = Colleges.objects.filter(Name__iexact = value)
@@ -11,14 +14,8 @@ def startingpage(request):
         else:
             college = college[0]
             return render(request, "colleges/collegedetail.html",{"college":college})
-
-        
-        # if college != []:
-        #     return render(request, "colleges/collegedetail.html",{"college":college})
-
-        print(value)
-        print(college)
-    return render(request, "colleges/index.html",{"value":college})
+    else:
+        return render(request, "colleges/index.html",{"form":form})
 
 
 def detailcollege(request,value):
@@ -32,13 +29,13 @@ def linkpages(request, value):
         return render(request, "colleges/scholarship.html",{"colleges":colleges})
     
      
-    elif value == "Interview experiences":
-         interviews = Interview.objects.all()
-         return render(request, "colleges/interviewexperiences.html",{"interviews":interviews})
+    elif value == "College Essays":
+         essay = Essays.objects.all()[0]
+         return render(request, "colleges/Collegeessays.html",{"essay":essay})
     
-    elif value == "interview_detail":
-       interviews = Interview.objects.all()
-       return render(request, "colleges/interviewdetail.html",{"interviews":interviews})
+    elif value == "Essay_detail":
+        essay = Essays.objects.all()[0]
+        return render(request, "colleges/essaydetail.html",{"essay":essay})
     
 
      
@@ -53,3 +50,17 @@ def linkpages(request, value):
         return render(request, "colleges/submitinformation.html")
     
     
+def scores(request):
+    if request.method == "POST":
+        userdata = ScoresForm(request.POST)
+        if userdata.is_valid():
+            Satscore = userdata.cleaned_data.get("SAT")
+            Gpa = userdata.cleaned_data.get("GPA")
+            Matched_Colleges = Colleges.objects.filter(MinimumSAT__lte=Satscore, MinimumGpa__lte=Gpa)
+            return render(request, "colleges/filteredcolleges.html",{"Matched_colleges":Matched_Colleges})
+    
+
+
+    form = ScoresForm()
+    return render(request, "colleges/index.html",{"form":form})
+

@@ -1,6 +1,8 @@
-body{
- 
-}
+
 .colleges p{
     font-size:20px;
+}
+.colleges h2{
+    text-align: center;
+    color:green;
 }

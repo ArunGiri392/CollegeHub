@@ -31,21 +31,43 @@
     font-size:20px;
 }
 
-.paragraph a{
+/* .paragraph a{
     margin-left:255px;
     margin-top:65px;
     background-color:#A9FFFF;
     border:2px solid black;
     border-radius:10px;
-    width:450px;
-    height:95px;
+    width:600px;
+    height:400px; 
+    text-decoration: none;
 }
 
 .paragraph a:hover{
-   
-    font-size: 20px;
+   font-size: 15px;
+} */
+.started {
+    /* background-color: red; */
+    display:flex;
+    background-color:#A9FFFF;
+    margin-left:690px;
+    margin-top:-298px;
+     width:230px;
+    height:40px;
+    border:2px solid black;
+    border-radius:10px;
+    align-items: center;
 }
 
+ .started a{
+    /* background-color: red; */
+     text-decoration: none;
+    margin-left: 45px; 
+}
+.started a:hover{
+    font-size:15px;
+    color:green;
+    /* background-color: green; */
+}
 .help{
     margin-top:-23px;
     /* background-color:red ; */
@@ -55,8 +77,62 @@
     margin-top:80px;
 }
 
+/* css for the form in the landing page */
+.form{ 
+    /* float:right;  */
+    
+    border:1px solid black;
+    /* background-color:blue; */
+    width:380px;
+    height:340px;
+    border-radius:10px;
+    background-color: #ffffff;
+    margin-top:50px;
+    margin-left: 380px;
+    
+}
+.form input[type=text]{/* It will target all the input elements whose type is text. */
+    width:85%;
+    height:40px;
+    margin-left:20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-left:15px;
+    margin-top:12px;
+}
+input[type=number]{
+    width:85%;
+    height:40px;
+    margin-left:20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-left:15px;
+    margin-top: 40px;
+}
 
-
+.form button{
+    margin-top:40px;
+    margin-left:100px;
+    width:150px;
+  
+} 
+.form button:hover{
+    color:green;
+    
+}
+.userdata p{
+    text-align: center;
+    font-size:26px;
+    margin-top: -30px;
+    color:Black;
+    
+}
+.userdata h5{
+    text-align: center;
+    color:black;
+    margin-top: 140px;
+    font-size:28px;
+}
 
 /*End of applying css to body*/
 
@@ -77,6 +153,8 @@
     width:250px;
     height:45px;
 }
+
+
 
 }
 

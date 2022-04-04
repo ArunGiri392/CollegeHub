@@ -1,6 +1,13 @@
-.header1 , .header2{
+ .header1 , .header2{
     text-align: center;
 }
-.applying li{
-    color:blue;
+ul li{
+    font-size:18px;
 }
+
+/* body{
+    background-color: red;
+} */ */
+/* .applying li{
+    color:blue;
+} */

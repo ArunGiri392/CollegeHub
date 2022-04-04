@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static%}
+
+{% block title%}
+College Essays
+{% endblock %}
+
+
+
+{% block content %}
+<h1>Personal Essay </h1>
+<p><a href="{% url "linkingpage" "Essay_detail" %}">{{essay.Name}}</a> -Berea College(Psychology)</p>
+
+
+
+{% endblock %}

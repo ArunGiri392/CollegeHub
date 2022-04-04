@@ -13,18 +13,55 @@ Home Page
 {% block content %}
 <div class="main">
     <div class="logo">
-    <img src="{% static "colleges/images/collegeapplication.jfif" %}" alt="Picture of the College Search Guide">
+    <img src="{% static "colleges/images/csgpicture.jpg" %}" alt="Picture of the College Search Guide">
     </div>
 
     <div class="paragraph">
      <p style="color:black;font-size:70px;">What we do?</p>
-     <p style="color:black;font-size:40px;">We help you to Find Best Scholarships based on your Profile.</p>
-     <a href="{% url "linkingpage" "Scholarship" %}">Get Started With Us!</a>
-     {{value}}
- 
-     </div>
-</div> 
-{% endblock %} 
-
- 
+     <p style="color:black;font-size:40px;">We help you find best Scholarships based on your Profile.</p>
+     {% comment %} <a href="{% url "linkingpage" "Scholarship" %}">Get Started With Us!</a> {% endcomment %}
+    </div>
+</div>
     
+
+<div class="started">
+    <a href="{% url "linkingpage" "Scholarship" %}">Get Started With Us!</a>
+</div>
+
+
+
+<div class="userdata">
+    <h5>Are you confused which Colleges/Scholarship to apply?</h5>
+    <p>Submit your Test Scores and GPA here and We will find a  Matching Scholarships/Colleges for you.</p>
+</div>
+{% comment %} form code for user to filter the colleges based on their scores {% endcomment %}
+
+{% comment %} <div class="form"> 
+    <form action="/" method="POST">
+    {% csrf_token %}
+
+     <label class="label" for="fname"></label><br>
+     <input  type="text" id="fname" name="fname" placeholder="Your Name"><br>
+
+     <label class="label" for="fname"></label><br>
+     <input  type="number" id="fname" name="fname" placeholder="Your SAT Score"  min="1000" max="1600" required> <br>
+
+     <label for="lname"></label><br>
+     <input type="number" id="lname" name="lname" placeholder="Your GPA"   min="2" max="4" required> <br></br>
+     
+     <button type="submit">Submit</button>
+    </form>
+ </div> {% endcomment %}
+
+<div class="form">
+     <form action="/scores" method="POST">
+         {% csrf_token %}
+         {{form.Name}}
+         {{form.SAT}}
+         {{form.GPA}}
+
+         <button type="submit">Submit</button>
+
+     </form>
+ </div>
+{% endblock %} 

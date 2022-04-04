@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static%}
+
+{% block content %}
+<h1>{{essay.Name}}</h1>
+<h1>{{essay.College}}</h1>
+<h1>{{essay.Major}}</h1>
+<h1>{{essay.Classof}}</h1>
+
+
+{{essay.Content|linebreaks}}
+{% endblock %}

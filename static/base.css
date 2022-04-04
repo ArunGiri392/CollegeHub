@@ -49,29 +49,23 @@ ul li a:hover{
     
 }
 .search{
-    margin-right: 35px;
+    margin-right:3px;
     border-radius: 10px;
     height:40px;
     width:190px;
 }
-.signup,.login{
-    border-radius: 10px;
-    color:black;
-    height:30px;
-    width:60px;
-}
+
  .right button:hover{
     background-color:green;
+
 }
 .right button{
+    border-radius: 10px;
+    margin-right:80px;
     padding:3px;
+
 }
-.signup{
-    margin-right:25px;
-}
-.login{
-  margin-right:15px;
-}
+
 
 /* End of applying css to the Navigation bar*/
 
@@ -111,12 +105,12 @@ footer ul li a:hover{
     margin-top:80px;
 }
 
-.help h2,h1{
+/* .help h2,h1{
     margin-left:25px;
      text-align: center;
      color:black;
      /* margin-top:30px; */
-}
+/* } */ */
 .help p{
     font-size:25px;
 }

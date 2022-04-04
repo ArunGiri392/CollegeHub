@@ -14,7 +14,7 @@ Colleges Information
 {% block content %}
 <div class="colleges">
     
-<p>College Name:{{college.Name}}</p>
+<h2>{{college.Name}}</h2>
 <p>Scholarship:{{college.ScholarshipName}}</p>
 <p>Minimum SAT Required for Scholarship:{{college.MinimumSAT }}</p>
 <p>Minimum GPA Required for Scholarship:{{college.MinimumGpa}}</p>
@@ -28,8 +28,5 @@ Colleges Information
 <h3>Additional Information:</h3>
 <p>{{college.Additionalinformation|linebreaks}}</p>
 {% endif %}
-
 </div>
-
-
 {% endblock %}

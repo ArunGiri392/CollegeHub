@@ -23,8 +23,11 @@ class Colleges(models.Model):
 
 
 
-class Interview(models.Model):
+class Essays(models.Model):
     Name = models.CharField(max_length=100)
+    College = models.CharField(max_length=100,null=True);
+    Major = models.CharField(max_length=100,null=True)
+    Classof = models.CharField(max_length=100,null=True)
     Content = models.TextField(validators=[MinLengthValidator(10)],null=True)
     def __str__(self):
         return self.Name
